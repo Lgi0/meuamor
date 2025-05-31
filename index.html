@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aline e Gio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffe0ec, #fff);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .since {
+      font-size: 1.8em;
+      margin: 30px 0;
+      font-weight: bold;
+      color: #6f42c1;
+    }
+
+    .share-btn {
+      background: #d63384;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .qr {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💘 Para Você, Com Muito Amor 💘</h1>
+  <p>Queria te lembrar do quanto você é especial para mim.</p>
+
+  <!-- Substitua esse link por uma URL pública de imagem -->
+  <img src="https://i.imgur.com/eTvkMhd.jpeg" alt="Foto especial">
+
+   <p>Meu amor, nunca se esqueça que cada célula do meu corpo te ama infinitamente.</p>
+
+  <div class="since" id="since"></div>
+
+  <div class="qr">
+    <p>Escaneie para ver esta página:</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seusite.com" alt="QR Code">
+  </div>
+
+  <script>
+    // Data do pedido de namoro
+    const startDate = new Date("2025-04-12T00:00:00").getTime();
+
+    function updateSince() {
+      const now = new Date().getTime();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("since").innerHTML =
+        `Estamos juntos há ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos!`;
+    }
+
+    updateSince();
+    setInterval(updateSince, 1000);
+  </script>
+
+</body>
+</html>
